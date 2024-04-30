@@ -1,0 +1,7 @@
+.headBox{
+    height: 40px;
+    width: 100px;
+    display: block;
+    background-color: lightyellow;
+    margin: 2px;
+}

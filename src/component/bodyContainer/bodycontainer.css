@@ -1,0 +1,5 @@
+.bodycontainer{
+    width: 100%;
+    background-color: rgb(135, 140, 143);
+    display:inline-flex;
+}

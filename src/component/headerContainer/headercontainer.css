@@ -1,0 +1,26 @@
+.headercontainer{
+    height: 75px;
+    width: 100%;
+    background-color: rgb(208, 215, 222);
+    display: inline-flex;
+    justify-content: space-between;
+}
+.headerActionItems{
+ margin-top: 20px;
+}
+.searchButton{
+    height: 20px;
+    width: 70px;
+    margin: 10px;
+}
+.link{
+    margin: 10px;
+    padding-top: 20px;
+}
+.searchBox{
+    height: 20px;
+    margin: 10px;
+}
+.logo{
+    display: inline-flex;
+}

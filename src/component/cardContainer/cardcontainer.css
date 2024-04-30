@@ -1,0 +1,8 @@
+.cardcontainer{
+    min-height: 495px;
+    width: 75%;
+    background-color:aquamarine;
+    text-align:center;
+    display: inline-block;
+    margin: 1px;
+}
