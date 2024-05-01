@@ -1,0 +1,21 @@
+.registerButton{
+    display: inline-flex;
+    margin-left: 10px;
+    min-width: 60px;
+}
+.registrationForm{
+    display: inline-flex;
+    flex-direction: column;
+}
+.formElement{
+    justify-content: space-between;
+    display: inline-flex;
+    margin: 10px;
+    width: 400px;
+}
+.buttonElement{
+    display: inline-flex;
+    margin: 10px;
+    width: 400px;
+    justify-content: flex-end;
+}

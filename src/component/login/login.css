@@ -1,0 +1,15 @@
+.clear{
+    margin: 10px;
+}
+.logindiv{
+    margin: 10px;
+    padding: 2px;
+
+}
+.logininput{
+    margin: 10px;
+}
+.login1{
+    text-align: center;
+    justify-content: space-between;
+}

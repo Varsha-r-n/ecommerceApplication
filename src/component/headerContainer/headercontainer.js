@@ -1,27 +1,36 @@
 import "./headercontainer.css";
-import HeadBox from "../headerNavigation/headBox";
 import logo from "../../logo.svg"
-function getheadBox(n) {
-  var elements = [];
-  for (let i = 0; i < n; i++) {
-    elements.push(<HeadBox key={i}></HeadBox>);
+import { Outlet, Link } from "react-router-dom"
+export default function Headercontainer({ user }) {
+  function getLinks(){
+    return (
+      <>
+          <Link className="link" to="/login">Login</Link>
+          <Link className="link" to="/registration">Registration</Link>
+      </>
+    )
   }
-  return elements;
-}
-export default function Headercontainer({ count }) {
+  function welcomeUser(user){
+    console.log(user)
+    return(
+      <div className="userWelcome">welcome {user}</div>
+    )
+  }
   return (
     <>
       <div className="headercontainer">
         <div className="logo">
-          <img src={logo} height={75} width={75}></img>
+          <Link to="/"><img src={logo} height={75} width={75}></img></Link>
         </div>
-        {/* {getheadBox(count)} */}
         <div className="headerActionItems">
           <input type="text" className="searchBox" />
           <button className="searchButton">Search</button>
-          <a href='#' className="link">Login</a>
-          <a href='#' className="link">Registration</a>
+          {
+            user ? welcomeUser(user) : getLinks()
+          }
+          
         </div>
+        <Outlet />
       </div>
     </>
   );
