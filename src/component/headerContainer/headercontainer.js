@@ -16,10 +16,10 @@ export default function Headercontainer({ user, setUser }) {
   }
   function logout() {
     document.cookie = `token = `
+    document.cookie = `userid = `
     setUser("");
   }
   function welcomeUser(user) {
-    console.log(user);
     return (
       <div className="userWelcome">
         welcome {user}

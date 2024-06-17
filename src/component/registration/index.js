@@ -37,7 +37,6 @@ export default function Registration() {
       'Content-Type': 'application/json'
       }, 
     });
-    console.log(name, mobNo, email, password);
     clearUserDetails();
     navigate('/login')
   }

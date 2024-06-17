@@ -10,16 +10,23 @@ import axios from "axios";
 function App() {
   const [user, setUser] = useState("");
   useEffect(() => {
-    if (user) {
-      console.log("-----", user);
-    } else if (document.cookie) {
+    const token = document.cookie.split("=")[1];
+    if (token && !user) {
       async function fetchdata() {
-        console.log("--doc coo---", document.cookie);
-        const token = document.cookie.split('=')[1]; 
+        let token = '';
+        let userId = '';
+        const cookieArr = document.cookie.split(';');
+        cookieArr.forEach(cookie => {
+          if(cookie.indexOf('userid') > -1){
+            userId = cookie.split('=')[1];
+          } else if(cookie.indexOf('token') > -1){
+            token = cookie.split('=')[1];
+          }
+        })
         try {
           const userDetails = await axios({
             method: "get",
-            url: "http://localhost:4000/users",
+            url: `http://localhost:4000/users/${userId}`,
             headers: {
               "Content-Type": "application/json",
               Authorization: `${token}`,
@@ -34,7 +41,7 @@ function App() {
     } else{
       console.log('user not logged in')
     }
-  }, [user]);
+  }, []);
   return (
     <BrowserRouter>
       <>

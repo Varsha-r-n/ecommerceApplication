@@ -15,7 +15,6 @@ export default function Login({setUser}) {
     setPassword(e.target.value)
   }
   async function loginUser(){
-    console.log(username, password)
     const payload = {
       username, password
     }
@@ -29,8 +28,8 @@ export default function Login({setUser}) {
         }, 
       });
       
-      document.cookie = `token = ${loginuser.data.token}`
-      console.log(document.cookie)
+      document.cookie = `token = ${loginuser.data.token}`;
+      document.cookie = `userid = ${loginuser.data.id}`;
       setUser(username)
       clearForm();
       navigate('/')
