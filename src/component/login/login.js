@@ -28,6 +28,9 @@ export default function Login({setUser}) {
         'Content-Type': 'application/json'
         }, 
       });
+      
+      document.cookie = `token = ${loginuser.data.token}`
+      console.log(document.cookie)
       setUser(username)
       clearForm();
       navigate('/')

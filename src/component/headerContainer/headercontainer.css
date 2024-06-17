@@ -27,3 +27,8 @@
 .userWelcome{
     display: inline-flex;
 }
+.logoutLink{
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    color: blue;
+}
