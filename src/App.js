@@ -6,7 +6,8 @@ import NoPage from "./component/noPage";
 import Headercontainer from "./component/headerContainer/headercontainer";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import ProductCategoryForm from "./component/productCategoryForm";
+import ProductForm from "./component/productForm";
 function App() {
   const [user, setUser] = useState("");
   useEffect(() => {
@@ -48,9 +49,11 @@ function App() {
         <Headercontainer setUser={setUser} user={user} />
       </>
       <Routes>
-        <Route path="/" element={<Container />} />
+        <Route path="/" element={<Container user={user} />} />
         <Route path="login" element={<Login setUser={setUser} />} />
         <Route path="registration" element={<Registration />} />
+        <Route path="productCategory" element={<ProductCategoryForm />} />
+        <Route path="product" element={<ProductForm />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
