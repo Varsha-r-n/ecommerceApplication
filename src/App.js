@@ -10,6 +10,7 @@ import ProductCategoryForm from "./component/productCategoryForm";
 import ProductForm from "./component/productForm";
 function App() {
   const [user, setUser] = useState("");
+  const [token, setToken] = useState("");
   useEffect(() => {
     const token = document.cookie.split("=")[1];
     if (token && !user) {
@@ -34,6 +35,7 @@ function App() {
             },
           });
           setUser(userDetails.data.email)
+          setToken(token);
         } catch (error) {
           console.log(error);
         }
@@ -52,8 +54,8 @@ function App() {
         <Route path="/" element={<Container user={user} />} />
         <Route path="login" element={<Login setUser={setUser} />} />
         <Route path="registration" element={<Registration />} />
-        <Route path="productCategory" element={<ProductCategoryForm />} />
-        <Route path="product" element={<ProductForm />} />
+        <Route path="productCategory" element={<ProductCategoryForm token={token} />} />
+        <Route path="product" element={<ProductForm token={token} />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

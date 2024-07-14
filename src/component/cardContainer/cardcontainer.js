@@ -26,7 +26,6 @@ export default function Cardcontainer({ count, user }) {
   console.log("-----111", user);
   return (
     <div className="cardcontainer">
-      <div>cardcontainer</div>
       {user ? showProdutButton() : getCards(count)}
       <Outlet />
     </div>
